@@ -1,0 +1,4 @@
+id,title,type,publication_year, issue,volume,chapter,publication_venue,venue_type,publisher,event
+doi:10.1111/aa11-uno,Title one for test,proceedings-paper,2001,,,,Future Collective seminar,proceedings,Harper-scifi,fancy event one
+doi:10.2222/bb22-due,Title two for test,proceedings-paper,2022,,,,Scholars anual summit-2022,proceedings,Jstor-capitalists,cosi-cosi event two
+doi:10.3333/cc33-tre,Title three for test,proceedings-paper,2003,,,,Scholars anual summit-2003,proceedings,Jstor-capitalists,mehhh event three
