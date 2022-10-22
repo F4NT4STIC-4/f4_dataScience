@@ -9,7 +9,6 @@ from pubMemory_full import *
 class GenericQueryProcessor(object):
     def __init__(self):
         self.queryProcessor = list()
-        
 
     def cleanQueryProcessors(self):
         self.queryProcessor = []
@@ -93,6 +92,7 @@ class GenericQueryProcessor(object):
                 
         return result
         #Publication -> here we will NOT return just a single Publication (as asked by the UML), but a list[Publication] because there may be multiple venues that are all the most cited (they have the same number of citations and therefore are all at the top of the descending order of cited venues)
+        
     def getMostCitedVenue(self):
         final_DF = pd.DataFrame()
         

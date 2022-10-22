@@ -146,6 +146,7 @@ print("getIds()",organizzazione.getIds())
 print("getName()",organizzazione.getName())
 
 print("\nThese are all the methods for the Venue class")
+print(venue_1)
 print("getIds()",venue_1.getIds())
 print("getPublisher()",venue_1.getPublisher())
 print("getTitle()",venue_1.getTitle())

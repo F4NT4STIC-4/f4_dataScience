@@ -339,6 +339,7 @@ class RelationalQueryProcessor(QueryProcessor,RelationalProcessor):
                 cur.execute(query)
                 result = cur.fetchall()
                 qrdb.commit()
+                print(type(result))
             return pd.DataFrame(data=result,columns=["publication_year", "title", "publication_venue", "id", "issue", "volume", "chapter_number", "pub_type", "family", "given", "orcid", "ref_doi", "issn_isbn", "publisher", "name_pub", "venue_type"])        
         else:
             raiseExceptions("The input parameter is not a string!")
@@ -462,9 +463,6 @@ class RelationalQueryProcessor(QueryProcessor,RelationalProcessor):
         return pd.DataFrame(data=result,columns=["publication_year", "title", "publication_venue", "id", "issue", "volume", "chapter_number", "pub_type", "family", "given", "orcid", "ref_doi", "issn_isbn", "publisher", "name_pub", "venue_type"])
 
 
-
-
-'''
 x = RelationalProcessor()
 print("RelationalProcessor object\n", x)
 x.getDbPath()
@@ -483,12 +481,12 @@ y.uploadData("testData/relational_other_data.json")
 # If you run the code again on here, it will upload again the .csv and the .json to the database (and therefore the getMostCited method will duplicate the result!)
 # This is because of the if_exists parameter in every .to_sql("PublishersTable", rdb, if_exists="append", index=False) instruction
 print("RelationalDataProcessor AFTER UPLOAD\n",y)
-'''
+
 
 z = RelationalQueryProcessor()
 z.setDbPath("SETDBPATH2.db")
 # ===== TESTS FOR ALL THE QUERIES (FOR BOTH CASES IF-ELSE)
-
+'''
 q1 = z.getPublicationsPublishedInYear(2020)
 print("getPublicationsPublishedInYear Query\n",q1)
 
@@ -503,10 +501,10 @@ print("getMostCitedVenue Query\n",q4)
 
 q5 = z.getVenuesByPublisherId("crossref:78")
 print("getVenuesByPublisherId Query\n",q5)
-
+'''
 q6 = z.getPublicationInVenue("issn:0944-1344")
 print("getPublicationInVenue Query\n",q6)
-
+'''
 q7 = z.getJournalArticlesInIssue("9","17","issn:2164-5515")
 print("getJournalArticleInIssue Query\n",q7)
 
@@ -527,3 +525,7 @@ print("getPublicationsByAuthorName Query\n",q12)
 
 q13 = z.getDistinctPublishersOfPublications(["doi:10.1080/21645515.2021.1910000", "doi:10.3390/ijfs9030035"])
 print("getDistinctPublisherOfPublications Query\n",q13)
+
+q14 = z.getPublicationsFromDOI(["doi:10.1080/21645515.2021.1910000"])
+print("getPublicationsFromDOI Query\n",q14)
+'''

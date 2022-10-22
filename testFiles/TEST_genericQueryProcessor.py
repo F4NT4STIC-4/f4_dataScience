@@ -35,7 +35,6 @@ generic.addQueryProcessor(rel_qp)
 # QUERIES AND METHODS
 q1 = generic.getPublicationsPublishedInYear(2020)
 #print("getPublicationsPublishedInYear Query\n",q1)
-
 print("Methods for the objects of class Publication:\n")
 for item in q1:
     print("ITEM")
@@ -49,7 +48,6 @@ for item in q1:
 
 q2 = generic.getPublicationsByAuthorId("0000-0001-9857-1511")
 #print("getPublicationsByAuthorId Query\n",q2)
-
 print("Methods for the objects of class Publication:\n")
 for item in q2:
     print("ITEM")
@@ -63,7 +61,6 @@ for item in q2:
 
 q3 = generic.getMostCitedPublication()
 #print("getMostCitedPublication Query\n",q3)
-
 print("Methods for the objects of class Publication:\n")
 for item in q3:
     print("ITEM")
@@ -76,7 +73,6 @@ for item in q3:
 
 q4 = generic.getMostCitedVenue()
 print("getMostCitedVenue Query\n",q4)
-
 print("Methods for the objects of class Venue:\n")
 for item in q4:
     print("ITEM")
@@ -86,7 +82,6 @@ for item in q4:
 
 q5 = generic.getVenuesByPublisherId("crossref:78")
 print("getVenuesByPublisherId Query\n",q5)
-
 print("Methods for the objects of class Venue:\n")
 for item in q5:
     print("ITEM")
@@ -96,7 +91,6 @@ for item in q5:
 
 q6 = generic.getPublicationInVenue("issn:0944-1344")
 print("getPublicationInVenue Query\n",q6)
-
 print("Methods for the objects of class Publication:\n")
 for item in q6:
     print("ITEM")
@@ -110,7 +104,6 @@ for item in q6:
 
 q7 = generic.getJournalArticlesInIssue("9","17","issn:2164-5515")
 print("getJournalArticleInIssue Query\n",q7)
-
 print("Methods for the objects of class Publication:\n")
 for item in q7:
     print("ITEM")
@@ -124,7 +117,6 @@ for item in q7:
 
 q8 = generic.getJournalArticlesInVolume("17","issn:2164-5515")
 print("getJournalArticleInVolume Query\n",q8)
-
 print("Methods for the objects of class Publication:\n")
 for item in q8:
     print("ITEM")
@@ -137,7 +129,6 @@ for item in q8:
 
 q9 = generic.getJournalArticlesInJournal("issn:2164-5515")
 print("getJournalArticleInJournal Query\n",q9)
-
 print("Methods for the objects of class Publication:\n")
 for item in q9:
     print("ITEM")
@@ -150,7 +141,6 @@ for item in q9:
 
 q10 = generic.getProceedingsByEvent("web")
 print("getProceedingsByEvent Query\n",q10)
-
 print("Methods for the objects of class Proceedings:\n")
 for item in q10:
     print("ITEM")
@@ -161,7 +151,6 @@ for item in q10:
 
 q11 = generic.getPublicationAuthors("doi:10.1080/21645515.2021.1910000")
 print("getPublicationAuthors Query\n",q11)
-
 print("Methods for the objects of class Person:\n")
 for item in q11:
     print("ITEM")
@@ -171,7 +160,6 @@ for item in q11:
 
 q12 = generic.getPublicationsByAuthorName("sil")
 print("getPublicationsByAuthorName Query\n",q12)
-
 print("Methods for the objects of class Publication:\n")
 for item in q12:
     print("ITEM")
@@ -184,7 +172,6 @@ for item in q12:
 
 q13 = generic.getDistinctPublishersOfPublications(["doi:10.1080/21645515.2021.1910000", "doi:10.3390/ijfs9030035"])
 print("getDistinctPublisherOfPublications Query\n",q13)
-
 print("Methods for the objects of class Organisation:\n")
 for item in q13:
     print("ITEM")
