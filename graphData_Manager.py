@@ -64,12 +64,29 @@ class TriplestoreDataProcessor(TriplestoreProcessor):
     def uploadData(self, filepath):
         # Step-1 : read the data into pandas
         if filepath.endswith(".csv"):
-            dataDF = readCSV(filepath)
+            #df1 -> journal article         // columns = 'id', 'title', 'type', 'publication_year', 'issue', 'volume'
+            #df2 -> book-chapter            // columns = 'id', 'title', 'type', 'publication_year', 'chapter'
+            #df3 -> proceedings-paper       // columns = 'id', 'title', 'type', 'publication_year'
+            #df4 -> Venue_book              // columns = 'id', 'publication_venue', 'venue_type', 'publisher'
+            #df5 -> Venue_journal           // columns = 'id', 'publication_venue', 'venue_type', 'publisher'
+            #df6 -> Venue_proceedings-event // columns = 'id', 'publication_venue', 'venue_type', 'publisher', 'event
+            df1,df2,df3,df4,df5,df6 = readCSV(filepath)
+    
         if filepath.endswith(".json"):
-            dataDF2 = readJSON(filepath)
+            #df7  -> authors                // columns = 
+            #df8  -> citations              // columns = 
+            #df9  -> publishers             // columns = 
+            #df10 -> VenueIDs               // columns = 
+            df7,df8,df9,df10 = readJSON(filepath)
 
         # Step-2 : iterate over the data to create triples
             # Avoid repetition
+            #2.1 : store triples for publishers
+            #2.2 : store triples for venues
+            #2.3 : store triples for authors
+            #2.4 : store triples for JA 
+            #2.5 : store triples for BC 
+            #2.6 : store triples for PP
 
         # Step-3 : open the connection to the DB and push the triples.
 

@@ -32,8 +32,18 @@ class RelationalDataProcessor(RelationalProcessor):
     def uploadData(self, filepath):
         # Step-1 : read the data into pandas
         if filepath.endswith(".csv"):
-            dataDF = readCSV(filepath)
+            #df1 -> journal article         // columns = 'id', 'title', 'type', 'publication_year', 'issue', 'volume'
+            #df2 -> book-chapter            // columns = 'id', 'title', 'type', 'publication_year', 'chapter'
+            #df3 -> proceedings-paper       // columns = 'id', 'title', 'type', 'publication_year'
+            #df4 -> Venue_book              // columns = 'id', 'publication_venue', 'venue_type', 'publisher'
+            #df5 -> Venue_journal           // columns = 'id', 'publication_venue', 'venue_type', 'publisher'
+            #df6 -> Venue_proceedings-event // columns = 'id', 'publication_venue', 'venue_type', 'publisher', 'event
+            df1,df2,df3,df4,df5,df6 = readCSV(filepath)
         elif filepath.endswith(".json"):
+            #df7  -> authors                // columns = 
+            #df8  -> citations              // columns = 
+            #df9  -> publishers             // columns = 
+            #df10 -> VenueIDs               // columns = 
             dataDF2 = readJSON(filepath)
 
         # Step-2 : create tables from the above data
